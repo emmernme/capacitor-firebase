@@ -321,7 +321,8 @@ public class FirebaseAuthentication {
     }
 
     public void linkWithGoogle(final PluginCall call) {
-        googleAuthProviderHandler.link(call);
+        oAuthProviderHandler.link(call, ProviderId.GOOGLE);
+        //googleAuthProviderHandler.link(call);
     }
 
     public void linkWithMicrosoft(final PluginCall call) {
@@ -524,7 +525,8 @@ public class FirebaseAuthentication {
     }
 
     public void signInWithGoogle(final PluginCall call) {
-        googleAuthProviderHandler.signIn(call);
+        oAuthProviderHandler.signIn(call, ProviderId.GOOGLE);
+        // googleAuthProviderHandler.signIn(call);
     }
 
     public void signInWithMicrosoft(final PluginCall call) {
@@ -964,7 +966,7 @@ public class FirebaseAuthentication {
             facebookAuthProviderHandler = new FacebookAuthProviderHandler(this);
         }
         if (providerList.contains(ProviderId.GOOGLE)) {
-            googleAuthProviderHandler = new GoogleAuthProviderHandler(this);
+            // googleAuthProviderHandler = new GoogleAuthProviderHandler(this);
         }
         if (providerList.contains(ProviderId.PHONE)) {
             phoneAuthProviderHandler = new PhoneAuthProviderHandler(this);
